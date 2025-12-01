@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mari's Advent Calendar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Advent Calendar</h1>
+        <div class="card">
+            <button id="adventButton" class="advent-button">
+                <span id="dateText">Loading...</span>
+            </button>
+            <p id="message" class="message hidden"></p>
+        </div>
+    </div>
+
+    <!-- Menu Button -->
+    <div class="menu-container">
+        <button id="menuButton" class="menu-button">⚙️</button>
+        <div id="menuOptions" class="menu-options hidden">
+            <button id="btnResetCalendar">Reset Calendar</button>
+            <button id="btnResetDay">Reset Day</button>
+            <button id="btnPrintUsed">Print Used</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

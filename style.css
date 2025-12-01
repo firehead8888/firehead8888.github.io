@@ -1,0 +1,207 @@
+:root {
+    --primary-red: #D42426;
+    --primary-green: #165B33;
+    --gold: #F8B229;
+    --white: #F0F2F5;
+    --text-dark: #2C3E50;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.title {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 40px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.advent-button {
+    background: radial-gradient(circle at 30% 30%, #ff4d4d, var(--primary-red));
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(212, 36, 38, 0.5), inset 0 -5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.advent-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 5px 15px rgba(212, 36, 38, 0.4);
+}
+
+.advent-button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    box-shadow: none;
+    color: #7f8c8d;
+}
+
+.message {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: 500;
+    color: var(--white);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.message:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Snowfall effect (simple CSS only) */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(4px 4px at 10% 10%, white 50%, transparent 50%),
+        radial-gradient(6px 6px at 20% 30%, white 50%, transparent 50%),
+        radial-gradient(3px 3px at 40% 70%, white 50%, transparent 50%),
+        radial-gradient(4px 4px at 60% 20%, white 50%, transparent 50%),
+        radial-gradient(5px 5px at 80% 50%, white 50%, transparent 50%),
+        radial-gradient(3px 3px at 90% 80%, white 50%, transparent 50%);
+    background-size: 400px 400px;
+    animation: snow 10s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes snow {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 400px; }
+}
+
+/* Menu Styles */
+.menu-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.menu-button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: transform 0.2s, background 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.menu-options {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-options button {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.menu-options button:hover {
+    background: rgba(0, 0, 0, 1);
+}
+
+.menu-options.hidden {
+    display: none;
+}
